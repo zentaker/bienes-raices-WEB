@@ -1,0 +1,385 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; /* resets para REMS - 62.6% = 10px de 16 px*/
+}
+*, *:before, *:after { /* sniped para que el pading no afecte el ancho de los bloques */
+	box-sizing: inherit;
+
+}
+
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.8rem;
+	line-height: 2; /*para aumentar el interlineado*/
+}
+
+
+/* globales */
+img {
+	max-width: 100%; /* permite que todas las imagenes sean responsibas y se ajusten al contender que los contiene */
+}
+
+.contenedor {
+	max-width: 120rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+/* Utilidades */
+.section {
+	margin-top: 2rem;
+	margin-bottom: 2rem; 
+}
+.fw-300 {
+    font-weight: 300;
+}
+.centrar-texto {
+    text-align: center;
+}
+/* botones */
+
+.in-block {
+	display: block!important;
+}
+.boton {
+	color: #ffffff;
+    font-weight: 700;
+    text-decoration: none; /* quitarle el subrallado*/
+    font-size: 1.8rem;
+    padding: 0.5rem 3rem;
+    margin-top: 3rem;
+    display: inline-block; /* con inline block no toma todo el espacio disponible */
+    text-align: center; /*para que los botones esten centrados*/s
+    border: none;
+
+}
+.boton-amarillo {
+	background-color: #E08709;
+	
+}
+
+.boton-verde {
+	background-color: #71B100;
+}
+.ver-todas {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+/* header */
+.site-header {
+	background-color: #333333;
+	padding: 1rem 0 3rem 0;
+}
+.site-header.inicio {
+	background: url(img/header.jpg);
+	background-position: center center;
+	background-size: cover; /* tome todo el espacio disponible de la imagen para que calce */
+	height: 100vh;
+	min-height: 60rem;
+}
+.contenedor-header {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.contenedor-header h1 {
+	color: #ffffff;
+	padding-bottom: 2rem;
+	max-width: 60rem; /* para que haga un salto de linia y este los textos separados*/
+	line-height: 6rem; /* para que tenga separacion entre los dos textos el titulo principal*/
+}
+.barra {
+	display: flex;
+	justify-content: space-between; /* para colocar la barra hacia la derecha de la navegacion, start para colocarlo al comienzo y center ene l centro, la propiedad space arround lo que hace es que deja unos espacios en los margenes de los que se le aplican*/
+	align-items: center; /* para que esten aliniados */
+	padding-top: 3rem;
+}
+/* navegacion */
+.navegacion a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1.8rem; /* = 18px */
+	margin-right: 2rem; /* separacion con el siguiente elemento */
+
+}
+.navegacion a:hover {
+	color: #71b100;
+}
+.navegacion a:last-of-type { /* para quitarle el margen a contacto y no se escpacie del borde, first od type es para hacer referencia al primer elemento*/
+	margin:  0;
+}
+
+/* iconos Nosotros */
+.iconos-nosotros {
+	display: flex;
+	justify-content: space-between;
+	
+}
+.icono {
+	flex-basis: 35rem;
+	text-align: center;
+
+}
+.icono h3 {
+	text-transform: uppercase;
+}
+
+/* anuncios */
+.contenedor-anuncios {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap; /*la propiedad de flexbox para estabñecer cuantos elementos por linea siempre se tiene que aplicar al padre*/
+}
+
+.anuncio {
+	flex-shrink: 0; /*propiedad que genera que en flexbox no se encoja los contenedores y siempre tome el tamaño de la base*/
+	flex-basis: calc(33.3% - 1rem);
+	border-style: solid;
+	border-color: #b5b5b5;
+	border-width: 1px;
+	background: #f5f5f5;
+	margin-bottom: 2rem;
+}
+.contenido-anuncio {
+	padding: 2rem;
+} 
+
+.contenido-anuncio h3, .contenido-anuncio p {
+	margin:  0;
+}
+
+.precio {
+	color: #71b100;
+	font-weight: 700;
+}
+
+.iconos-caracteristicas {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: space-evenly;
+	max-width: 50rem;
+	flex: 1; /*para que crezca los iconos pero que siempre respete el max width*/
+}
+.iconos-caracteristicas li {
+	
+	display: flex;	
+}
+.iconos-caracteristicas img {
+	margin-right: 2rem;
+}
+
+/*contacto home*/
+.imagen-contacto {
+	background-image: url('img/encuentra.jpg');
+	background-position: center center;
+	background-size: cover;
+	height: 40rem;
+	display: flex;
+	align-items: center;
+}
+.contenido-contacto {
+	flex: 1; /*para asignar la pocicion de un contenido de texto centrado*/
+	color: #ffffff;
+}
+
+.contenido-contacto p {
+	font-size: 1.8rem;
+}
+
+/*seccion inferior*/
+
+.seccion-inferior {
+	display: flex;
+	justify-content: space-between;
+
+}
+.seccion-inferior .blog {
+	flex-basis: 60%;
+}
+.seccion-inferior .testimoniales {
+	flex-basis: calc(40% - 2rem);
+}
+.entrada-blog{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+.entrada-blog:last-of-type {
+	margin-bottom: 0;
+}
+.entrada-blog .imagen{
+	flex-basis: 40%; 
+}
+.entrada-blog .texto-entrada {
+	flex-basis: calc(60% - 2rem);
+}
+.texto-entrada a {
+	color: black;
+	text-decoration: none;
+}
+.texto-entrada h4 {
+	margin: 0;
+	line-height: 1.2;
+}
+.texto-entrada h4::after {
+	content: '';
+	display: block;
+	width: 15rem;
+	height: .5rem;
+	background-color: #71B100;
+	margin-top: 1rem;
+}
+.texto-entrada span {
+	color: #E08709;
+}
+/*testimoniales*/
+.testimonial {
+	background-color: #71b100;
+	font-size: 2.4rem;
+	padding: 2rem;
+	color: white;
+	border-radius: 2rem;
+}
+
+.testimonial p {
+	text-align: right;
+}
+.testimonial blockquote::before {
+	content: '';
+	background-image: url('img/comilla.svg');
+	width: 4rem;
+	height: 4rem;
+	display: block;
+	position: absolute; /* puedes poscicionarlo espesificamente donde quieres colocarlo pero es nesesario que el padre dea relative */
+	left: -1rem;
+}
+.testimonial blockquote {
+	position: relative;
+	padding-left: 7rem;
+	font-weight: 300;
+}
+
+/*footer */
+.site-footer {
+	background-color: #333333;
+	margin: 0;
+
+}
+.contenedor-footer {
+	padding: 3rem 0;
+	display: flex;
+	justify-content: space-between;
+
+}
+.copyright {
+	margin: 0;
+	color: white;
+}
+.site-footer .navegacion a {
+	font-size: .1.5rem;
+}
+
+/*internas */
+
+/*nosotros*/
+.contenido-nosotros {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 2rem;
+
+    }
+.texto-nosotros blockquote {
+	font-weight: 900;
+	font-size: 2rem;
+	margin: 0;
+	padding: 3rem 0;
+
+}
+
+/*anuncio*/
+.resumen-propiedad {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /*alinea los contenidos de forma horizontal*/
+}
+
+.contenido-centrado {
+	max-width: 80rem;
+}
+
+/*contacto*/
+form p {
+	font-size: 1.2rem;
+	color: #4f4f4f;
+	margin: 2rem 0 0;
+}
+legend {
+	font-size: 2.4rem;
+	color: #333333;
+}
+label {
+	font-weight: 700;
+	text-transform: uppercase;
+	display: block;
+}
+
+input:not([type="submit"]), 
+textarea,
+select  {
+	background-color: #e1e1e1;
+	width: 100%;
+	padding: 1rem;
+	display: block;
+	margin-bottom: 2rem;
+	border: none;
+	border-radius: 1rem;
+}
+input[type="radio"] {
+	width: auto;
+	margin: 0;
+}
+select {
+    -webkit-appearance: none;
+    appearance: none;
+ }
+textarea {
+	height: 20rem;
+}
+ .forma-contacto {
+    max-width:30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+[type="submit"] {
+	margin-bottom: 2rem;
+	}	
+
+
+
+
+
+
+
+
+
+
